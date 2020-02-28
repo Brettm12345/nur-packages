@@ -21,14 +21,9 @@ let
       '';
 
       meta = with lib; {
-        description =
-          "A fork of XCompMgr, a sample compositing manager for X servers";
+        description = "A fork of picom with a rounded corners patch";
         longDescription = ''
-          A fork of XCompMgr, which is a sample compositing manager for X
-          servers supporting the XFIXES, DAMAGE, RENDER, and COMPOSITE
-          extensions. It enables basic eye-candy effects. This fork adds
-          additional features, such as additional effects, and a fork at a
-          well-defined and proper place.
+          Adds the `--corner-radius RADIUS` option to `picom`.
         '';
         license = licenses.mit;
         maintainers = with maintainers; [ ertes enzime twey ];
@@ -37,7 +32,7 @@ let
     });
 
   gitSource = rec {
-    pname = "compton-rounded-corners";
+    pname = "picom-rounded-corners";
     version = "5.1";
 
     COMPTON_VERSION = "v${version}";
@@ -58,10 +53,6 @@ let
       libxslt
       libconfig
       libGL
-      # Removed:
-      # libXcomposite libXdamage libXrender libXrandr
-
-      # New:
       libxcb
       xcbutilrenderutil
       xcbutilimage
