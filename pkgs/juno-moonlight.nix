@@ -1,6 +1,5 @@
-{ stdenv, gtk-engine-murrine }:
-let sources = import ../nix/sources.nix;
-in stdenv.mkDerivation rec {
+{ stdenv, gtk-engine-murrine, sources }:
+stdenv.mkDerivation rec {
   name = "juno-moonlight-${version}";
   version = "1.0.0";
   src = sources.juno;
